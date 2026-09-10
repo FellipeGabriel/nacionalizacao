@@ -9,19 +9,18 @@ Publicado em https://fellipegabriel.github.io/nacionalizacao/
 ## Estrutura
 
 ```
-index.html                    a página, arquivo único e autocontido
+index.html                    a página em um único arquivo HTML
 .github/workflows/deploy.yml  publicação automática no GitHub Pages
 ```
 
-O `index.html` contém toda a página: HTML, CSS, JavaScript e fontes. Não há dependências externas, instalação de pacotes nem etapa de compilação. Também funciona ao abrir o arquivo diretamente no navegador, sem internet.
+O `index.html` reúne o conteúdo, o CSS e o JavaScript, sem instalação de pacotes nem etapa de compilação. A única dependência externa é a fonte Archivo, carregada pelo Google Fonts. Sem internet, a página continua funcionando com a fonte padrão do sistema, que pode alterar as quebras de linha.
 
 O arquivo está organizado nesta ordem:
 
 1. Estilos: tipografia, paletas dos países, componentes, animações e regras responsivas.
-2. Fonte Archivo: licença e três subconjuntos WOFF2 embutidos em base64. É o único trecho de dados codificados; não precisa ser alterado para editar a página.
-3. Conteúdo em HTML: abertura, navegação, introdução, dossiê de Portugal, tabela comparativa e rodapé.
-4. Templates HTML dos dossiês de Alemanha, Reino Unido e Espanha. Portugal é reutilizado a partir do conteúdo inicial.
-5. JavaScript: seleção do país, animações, navegação, progresso de leitura e relógios.
+2. Conteúdo em HTML: abertura, navegação, introdução, dossiê de Portugal, tabela comparativa e rodapé.
+3. Templates HTML dos dossiês de Alemanha, Reino Unido e Espanha. Portugal é reutilizado a partir do conteúdo inicial.
+4. JavaScript: seleção do país, animações, navegação, progresso de leitura e relógios.
 
 Para editar textos, procure a frase no HTML ou o template `country-DE`, `country-UK` ou `country-ES`. Para alterar as cores, procure as regras `html[data-country]`. Os dados de câmbio continuam sendo referências estáticas, como na versão original; os relógios são atualizados a cada segundo.
 
@@ -57,4 +56,4 @@ O código está sob a licença MIT. Ver [LICENSE](LICENSE).
 
 O conteúdo do dossiê, ou seja, os textos, os dados comparativos e a curadoria editorial, está sob Creative Commons Atribuição NãoComercial CompartilhaIgual 4.0 Internacional. Reutilizar exige crédito ao autor, veta uso comercial e obriga o derivado a adotar a mesma licença. Ver [LICENSE-CONTENT](LICENSE-CONTENT).
 
-A fonte Archivo, da Omnibus-Type, está sob SIL Open Font License 1.1, com a licença preservada no HTML. A página não depende de React nem do runtime de exportação do Canvas.
+A fonte Archivo, da Omnibus-Type, é carregada pelo Google Fonts e está sob [SIL Open Font License 1.1](https://github.com/google/fonts/blob/main/ofl/archivo/OFL.txt). O HTML não contém mais arquivos de fonte embutidos. A página não depende de React nem do runtime de exportação do Canvas.
